@@ -21,6 +21,8 @@ namespace UITest
             TabTipAutomation.IgnoreHardwareKeyboard = HardwareKeyboardIgnoreOptions.IgnoreAll;
             TabTipAutomation.BindTo<TextBox>();
             TabTipAutomation.BindTo<RichTextBox>();
+
+            DataContext = this;
         }
 
         private static void GetKeyboardDescriptions()
@@ -44,5 +46,11 @@ namespace UITest
         private void btn_NewWindow_OnClick(object sender, RoutedEventArgs e) => new DialogWindow().Show();
 
         private void btn_KeyboardDescriptions_OnClick(object sender, RoutedEventArgs e) => GetKeyboardDescriptions();
+
+        public int BottomText
+        {
+            get;
+            set;
+        }
     }
 }
